@@ -18,7 +18,7 @@ function MainLayout({ children }) {
       <Layout>
         <MainSidebar
           trigger={null}
-          breakpoint="lg"
+          breakpoint="md"
           collapsedWidth="0"
           collapsible
           collapsed={responsive}
