@@ -21,7 +21,7 @@ export default function MainSidebar() {
           <Link to={UrlRouter.home}>Home</Link>
         </Menu.Item>
         <Menu.Item key="2" icon={<FunnelPlotOutlined />}>
-          <Link to={UrlRouter.planta.index}>Plantas</Link>
+          <Link to={UrlRouter.plantas.index}>Plantas</Link>
         </Menu.Item>
         <Menu.Item key="3" icon={<UploadOutlined />}>
           Plantação

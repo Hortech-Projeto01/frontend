@@ -1,14 +1,14 @@
 const mainUrlRoutes = {
   home: "/",
-  planta: "/plantas",
+  plantas: "/plantas",
 };
 
 const UrlRouter = {
   home: mainUrlRoutes.home,
-  planta: {
-    index: mainUrlRoutes.planta,
-    novo: `${mainUrlRoutes}/novo`,
-    editar: `${mainUrlRoutes}/editar/:id`,
+  plantas: {
+    index: mainUrlRoutes.plantas,
+    novo: `${mainUrlRoutes.plantas}/novo`,
+    editar: `${mainUrlRoutes.plantas}/editar/:id`,
   },
   //TODO: Adicionar para plantação
 };

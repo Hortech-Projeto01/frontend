@@ -1,7 +1,13 @@
 .main-header {
   display: flex;
   align-items: center;
-  padding: 0 5px;
+  padding: 0 20px;
   height: 60px;
   border-bottom: 1px solid #aaaaaa;
+  background: rgb(22, 120, 0);
+  background: linear-gradient(
+    90deg,
+    rgba(22, 120, 0, 1) 0%,
+    rgba(0, 164, 96, 1) 100%
+  );
 }

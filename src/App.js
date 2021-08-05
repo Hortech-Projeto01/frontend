@@ -13,7 +13,7 @@ function App() {
           <Route exact path={UrlRouter.home}>
             <h1>Home</h1>
           </Route>
-          <Route path={UrlRouter.planta.index} component={PlantaIndex} />
+          <Route path={UrlRouter.plantas.index} component={PlantaIndex} />
         </Switch>
       </MainLayout>
     </BrowserRouter>
