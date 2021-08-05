@@ -25,5 +25,11 @@ function MainLayout({ children }) {
 MainLayout.propTypes = {
   children: PropTypes.element,
 };
+MainLayout.state = {
+  collapsed : false,
+}
+MainLayout.responsive = (newCollapsed) => {
+  this.setState({collapsed: newCollapsed})
+}
 
 export default MainLayout;
