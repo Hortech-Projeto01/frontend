@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import MainHeader from "core/components/MainHeader";
 import { Layout } from "antd";
 import MainSidebar from "../MainSidebar";
@@ -9,12 +9,23 @@ TODO: Layout principal da aplicação. Deverá conter
 
 */
 function MainLayout({ children }) {
+  const [responsive, setCollapsed] = useState(false);
+  const toggle = () => {
+    setCollapsed(!responsive);
+  };
   return (
     <>
       <Layout>
-        <MainSidebar />
+        <MainSidebar
+          trigger={null}
+          breakpoint="lg"
+          collapsedWidth="0"
+          collapsible
+          collapsed={responsive}
+          onCollapse={toggle}
+        />
         <Layout>
-          <MainHeader />
+          <MainHeader collapsed={responsive} toggleFn={() => toggle()} />
           {children}
         </Layout>
       </Layout>
@@ -25,11 +36,5 @@ function MainLayout({ children }) {
 MainLayout.propTypes = {
   children: PropTypes.element,
 };
-MainLayout.state = {
-  collapsed : false,
-}
-MainLayout.responsive = (newCollapsed) => {
-  this.setState({collapsed: newCollapsed})
-}
 
 export default MainLayout;
