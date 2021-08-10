@@ -19,11 +19,15 @@ export class ServiceBase {
     this.endpoint = endpoint;
   }
 
-  get(options = {}) {
+  getAll(options = {}) {
     const requestParams = new URLSearchParams(options);
     return axios.get(
-      `${this.baseUrl}/${this.endpoint}?${requestParams.toString()}`
+      `${this.baseUrl}${this.endpoint}?${requestParams.toString()}`
     );
+  }
+
+  create(values) {
+    return axios.post(`${this.baseUrl}${this.endpoint}`, values);
   }
 
   //TODO: getById, save/create, update, delete.

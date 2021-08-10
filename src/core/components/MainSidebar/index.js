@@ -12,15 +12,16 @@ import "./style.scss";
 import { Link } from "react-router-dom";
 import UrlRouter from "core/constants/UrlRouter";
 
+//TODO: Fazer o menu selecionado depender da rota.
 export default function MainSidebar() {
   return (
     <Sider className="sidebar">
       <div className="logo" />
       <Menu theme="dark" mode="inline" defaultSelectedKeys={["1"]}>
-        <Menu.Item key="1" icon={<HomeOutlined />}>
+        <Menu.Item key={UrlRouter.home} icon={<HomeOutlined />}>
           <Link to={UrlRouter.home}>Home</Link>
         </Menu.Item>
-        <Menu.Item key="2" icon={<FunnelPlotOutlined />}>
+        <Menu.Item key={UrlRouter.plantas.index} icon={<FunnelPlotOutlined />}>
           <Link to={UrlRouter.plantas.index}>Plantas</Link>
         </Menu.Item>
         <Menu.Item key="3" icon={<UploadOutlined />}>

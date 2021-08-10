@@ -1,14 +1,11 @@
-const mainUrlRoutes = {
-  home: "/",
-  plantas: "/plantas",
-};
+import MainUrlRoutes from "core/constants/MainUrlRoutes";
 
 const UrlRouter = {
-  home: mainUrlRoutes.home,
+  home: MainUrlRoutes.home,
   plantas: {
-    index: mainUrlRoutes.plantas,
-    novo: `${mainUrlRoutes.plantas}/novo`,
-    editar: `${mainUrlRoutes.plantas}/editar/:id`,
+    index: MainUrlRoutes.plantas,
+    novo: `${MainUrlRoutes.plantas}/novo`,
+    editar: `${MainUrlRoutes.plantas}/editar/:id`,
   },
   //TODO: Adicionar para plantação
 };
