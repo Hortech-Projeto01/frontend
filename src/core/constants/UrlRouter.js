@@ -7,6 +7,11 @@ const UrlRouter = {
     novo: `${MainUrlRoutes.plantas}/novo`,
     editar: `${MainUrlRoutes.plantas}/editar/:id`,
   },
+  plantacoes: {
+    index: mainUrlRoutes.plantacoes,
+    novo: `${mainUrlRoutes.plantacoes}/novo`,
+    editar: `${mainUrlRoutes.plantacoes}/editar/:id`,
+  },
   //TODO: Adicionar para plantação
 };
 

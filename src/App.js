@@ -2,6 +2,7 @@ import MainLayout from "core/components/MainLayout";
 import UrlRouter from "core/constants/UrlRouter";
 import PlantaCreate from "planta/pages/PlantaCreate";
 import PlantaIndex from "planta/pages/PlantaIndex";
+import PlantacaoIndex from "planta/pages/PlantacaoIndex";
 import React from "react";
 import { Switch, BrowserRouter, Route } from "react-router-dom";
 
@@ -16,6 +17,7 @@ function App() {
           </Route>
           <Route exact path={UrlRouter.plantas.index} component={PlantaIndex} />
           <Route exact path={UrlRouter.plantas.novo} component={PlantaCreate} />
+          <Route path={UrlRouter.plantacoes.index} component={PlantacaoIndex} />
         </Switch>
       </MainLayout>
     </BrowserRouter>
