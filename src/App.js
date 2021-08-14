@@ -2,7 +2,7 @@ import MainLayout from "core/components/MainLayout";
 import UrlRouter from "core/constants/UrlRouter";
 import PlantaCreate from "planta/pages/PlantaCreate";
 import PlantaIndex from "planta/pages/PlantaIndex";
-import PlantacaoIndex from "planta/pages/PlantacaoIndex";
+import PlantacaoIndex from "plantacao/pages/PlantacaoIndex";
 import React from "react";
 import { Switch, BrowserRouter, Route } from "react-router-dom";
 

@@ -4,9 +4,9 @@ import React from "react";
 
 export default function PlantacaoIndex() {
   const columns = [
-    { title: "Identificador" },
-    { title: "Cultura" },
-    { title: "Ultima atualização" },
+    { title: "Identificador",key:"id" },
+    { title: "Solo", key:"solo_id" },
+    { title: "Ultima atualização" , key:"updatedAt" },
   ];
 
   return (

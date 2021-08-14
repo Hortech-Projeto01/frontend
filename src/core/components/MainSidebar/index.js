@@ -13,9 +13,9 @@ import { Link } from "react-router-dom";
 import UrlRouter from "core/constants/UrlRouter";
 
 //TODO: Fazer o menu selecionado depender da rota.
-export default function MainSidebar() {
+export default function MainSidebar(props) {
   return (
-    <Sider {...props}>
+    <Sider className="sidebar" {...props}>
       <div className="logo" />
       <Menu theme="dark" mode="inline" defaultSelectedKeys={["1"]}>
         <Menu.Item key="1" icon={<HomeOutlined />}>
@@ -25,7 +25,7 @@ export default function MainSidebar() {
           <Link to={UrlRouter.plantas.index}>Plantas</Link>
         </Menu.Item>
         <Menu.Item key="3" icon={<UploadOutlined />}>
-          <Link to={UrlRouter.plantacao.index}>Plantação</Link>
+          <Link to={UrlRouter.plantacoes.index}>Plantação</Link>
         </Menu.Item>
       </Menu>
     </Sider>
