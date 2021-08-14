@@ -1,4 +1,5 @@
 import React from "react";
+import { useLocation } from 'react-router-dom'
 import { Layout, Menu } from "antd";
 import {
   HomeOutlined,
@@ -14,17 +15,20 @@ import UrlRouter from "core/constants/UrlRouter";
 
 //TODO: Fazer o menu selecionado depender da rota.
 export default function MainSidebar(props) {
+  const location = useLocation();
+  //gambiarra pra depender da rota
+  const defaultKey = "/"+location.pathname.split("/")[1];
   return (
     <Sider className="sidebar" {...props}>
       <div className="logo" />
-      <Menu theme="dark" mode="inline" defaultSelectedKeys={["1"]}>
-        <Menu.Item key="1" icon={<HomeOutlined />}>
+      <Menu theme="dark" mode="inline" defaultSelectedKeys={[defaultKey]}>
+        <Menu.Item key={UrlRouter.home} icon={<HomeOutlined />}>
           <Link to={UrlRouter.home}>Home</Link>
         </Menu.Item>
-        <Menu.Item key="2" icon={<FunnelPlotOutlined />}>
+        <Menu.Item key={UrlRouter.plantas.index} icon={<FunnelPlotOutlined />}>
           <Link to={UrlRouter.plantas.index}>Plantas</Link>
         </Menu.Item>
-        <Menu.Item key="3" icon={<UploadOutlined />}>
+        <Menu.Item key={UrlRouter.plantacoes.index} icon={<UploadOutlined />}>
           <Link to={UrlRouter.plantacoes.index}>Plantação</Link>
         </Menu.Item>
       </Menu>
