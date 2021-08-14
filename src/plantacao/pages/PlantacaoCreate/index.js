@@ -1,5 +1,5 @@
 import MainCard from "core/components/MainCard";
-//import PlantacaoForm from "plantacao/components/PlantacaoForm";
+import PlantacaoCreateForm from "plantacao/components/PlantacaoCreateForm";
 //import PlantacaoService from "plantacao/services/PlantacaoService";
 import React from "react";
 //import * as yup from "yup";
@@ -14,7 +14,9 @@ export default function PlantacaoCreate() {
 
   return (
     <MainCard>
-      <h1>Pending...</h1>
+      <PlantacaoCreateForm
+      
+      />
     </MainCard>
   );
 }

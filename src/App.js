@@ -18,8 +18,8 @@ function App() {
           </Route>
           <Route exact path={UrlRouter.plantas.index} component={PlantaIndex} />
           <Route exact path={UrlRouter.plantas.novo} component={PlantaCreate} />
-          <Route path={UrlRouter.plantacoes.index} component={PlantacaoIndex} />
-          <Route path={UrlRouter.plantacoes.novo} component={PlantacaoCreate} />
+          <Route exact path={UrlRouter.plantacoes.index} component={PlantacaoIndex} />
+          <Route exact path={UrlRouter.plantacoes.novo} component={PlantacaoCreate} />
         </Switch>
       </MainLayout>
     </BrowserRouter>
