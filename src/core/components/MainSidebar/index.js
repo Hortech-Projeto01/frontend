@@ -13,10 +13,10 @@ import "./style.scss";
 import { Link } from "react-router-dom";
 import UrlRouter from "core/constants/UrlRouter";
 
-//TODO: Fazer o menu selecionado depender da rota.
+//TODO: Fazer o menu selecionado depender da rota. - ver linha 19
 export default function MainSidebar(props) {
   const location = useLocation();
-  //gambiarra pra depender da rota
+  //Codigo temporario pra depender da rota
   const defaultKey = "/"+location.pathname.split("/")[1];
   return (
     <Sider className="sidebar" {...props}>
