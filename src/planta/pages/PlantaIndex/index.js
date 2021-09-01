@@ -16,7 +16,7 @@ export default function PlantaIndex() {
   useEffect(() => {
     plantaService.getAll()
     .then((response) => {
-      setPlantas(response.data)
+      setPlantas(response.data.rows)
     })
   }, [])
 
@@ -24,6 +24,7 @@ export default function PlantaIndex() {
     <GenericIndex
       columns={columns}
       entity={plantas}
+      viewLink={UrlRouter.plantas.visualizar}
       headerButtons={UrlRouter.plantas.novo}
     />
   );

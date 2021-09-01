@@ -30,5 +30,9 @@ export class ServiceBase {
     return axios.post(`${this.baseUrl}${this.endpoint}`, values);
   }
 
-  //TODO: getById, save/create, update, delete.
+  getById(id) {
+    return axios.get(`${this.baseUrl}${this.endpoint}/${id}`);
+  }
+
+  //TODO: update, delete.
 }

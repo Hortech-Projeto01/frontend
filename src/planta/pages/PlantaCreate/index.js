@@ -15,10 +15,10 @@ export default function PlantaCreate() {
     tecnicas_plantio: yup.string().notRequired(),
     infos_por_estacao: yup.string().notRequired(),
     cor_folhas: yup.string().notRequired(),
-    num_frutos_colhidos: yup.number().notRequired(),
-    qtd_diaria_agua: yup.number().notRequired(),
-    qtd_media_sementes: yup.number().notRequired(),
-    nivel_incidencia_solar: yup.number().notRequired(),
+    num_frutos_colhidos: yup.number().required("Campo requerido!"),
+    qtd_diaria_agua: yup.number().required("Campo requerido!"),
+    qtd_media_sementes: yup.number().required("Campo requerido!"),
+    nivel_incidencia_solar: yup.number().required("Campo requerido!"),
   });
 
   return (
