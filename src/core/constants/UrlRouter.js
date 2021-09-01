@@ -13,6 +13,9 @@ const UrlRouter = {
     novo: `${MainUrlRoutes.plantacoes}/novo`,
     editar: `${MainUrlRoutes.plantacoes}/editar/:id`,
   },
+  auth:{
+    login: MainUrlRoutes.login,
+  },
 };
 
 export default UrlRouter;

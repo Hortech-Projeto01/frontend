@@ -6,7 +6,10 @@ import PlantaIndex from "planta/pages/PlantaIndex";
 import PlantacaoIndex from "plantacao/pages/PlantacaoIndex";
 import PlantacaoCreate from "plantacao/pages/PlantacaoCreate";
 import PlantaView from "planta/pages/PlantaView";
+import LoginPage from "auth/pages/LoginPage";
+
 import { Switch, BrowserRouter, Route } from "react-router-dom";
+
 
 function App() {
   return (
@@ -22,6 +25,8 @@ function App() {
           <Route exact path={UrlRouter.plantas.visualizar} component={PlantaView} />
           <Route exact path={UrlRouter.plantacoes.index} component={PlantacaoIndex} />
           <Route exact path={UrlRouter.plantacoes.novo} component={PlantacaoCreate} />
+          {/* Rotas de login */}
+          <Route exact path={UrlRouter.auth.login} component={LoginPage} />
         </Switch>
       </MainLayout>
     </BrowserRouter>

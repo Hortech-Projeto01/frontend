@@ -2,7 +2,8 @@
 const MainUrlRoutes = {
   home: "/",
   plantas: "/plantas",
-  plantacoes: "/plantacoes"
+  plantacoes: "/plantacoes",
+  login: "/login",
 };
 
 export default MainUrlRoutes;
