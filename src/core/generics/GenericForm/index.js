@@ -1,10 +1,13 @@
 import React from "react";
 import { Formik } from "formik";
-import { SubmitButton, ResetButton, Form, FormikDebug } from "formik-antd";
+import { SubmitButton, ResetButton, Form } from "formik-antd";
 import PropTypes from "prop-types";
 import { message } from "antd";
+import { useHistory } from "react-router";
+
 
 import "./styles.scss";
+import UrlRouter from "core/constants/UrlRouter";
 
 //TODO: Fazer com que, ao submeter o form e o mesmo não esteja válido, todos os campos com erro sejam "touched"
 function GenericForm({
@@ -14,6 +17,8 @@ function GenericForm({
   children,
   ...props
 }) {
+  const history = useHistory();
+
   return (
     <Formik
       initialValues={initialValues}
@@ -23,6 +28,7 @@ function GenericForm({
           .then(() => {
             message.success("Salvo com sucesso!");
             actions.resetForm();
+            history.push(UrlRouter.plantas.index);
           })
           .catch((error) =>
             message.error(`Aconteceu um erro. 
@@ -42,7 +48,6 @@ function GenericForm({
             <SubmitButton className="form-buttons">Salvar</SubmitButton>
           </div>
         </Form>
-        <FormikDebug />
       </>
     </Formik>
   );

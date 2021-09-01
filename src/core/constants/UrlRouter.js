@@ -6,13 +6,13 @@ const UrlRouter = {
     index: MainUrlRoutes.plantas,
     novo: `${MainUrlRoutes.plantas}/novo`,
     editar: `${MainUrlRoutes.plantas}/editar/:id`,
+    visualizar: `${MainUrlRoutes.plantas}/:id`,
   },
   plantacoes: {
     index: MainUrlRoutes.plantacoes,
     novo: `${MainUrlRoutes.plantacoes}/novo`,
     editar: `${MainUrlRoutes.plantacoes}/editar/:id`,
   },
-  //TODO: Adicionar para plantação
 };
 
 export default UrlRouter;

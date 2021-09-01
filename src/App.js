@@ -1,10 +1,11 @@
+import React from "react";
 import MainLayout from "core/components/MainLayout";
 import UrlRouter from "core/constants/UrlRouter";
 import PlantaCreate from "planta/pages/PlantaCreate";
 import PlantaIndex from "planta/pages/PlantaIndex";
 import PlantacaoIndex from "plantacao/pages/PlantacaoIndex";
 import PlantacaoCreate from "plantacao/pages/PlantacaoCreate";
-import React from "react";
+import PlantaView from "planta/pages/PlantaView";
 import { Switch, BrowserRouter, Route } from "react-router-dom";
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           </Route>
           <Route exact path={UrlRouter.plantas.index} component={PlantaIndex} />
           <Route exact path={UrlRouter.plantas.novo} component={PlantaCreate} />
+          <Route exact path={UrlRouter.plantas.visualizar} component={PlantaView} />
           <Route exact path={UrlRouter.plantacoes.index} component={PlantacaoIndex} />
           <Route exact path={UrlRouter.plantacoes.novo} component={PlantacaoCreate} />
         </Switch>

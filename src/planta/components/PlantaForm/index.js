@@ -51,7 +51,7 @@ function PlantaForm({ initialValues, validationSchema, onSubmit, ...props }) {
             </FormItem>
           </Col>
           <Col md={8} sm={24}>
-            <FormItem name="num_frutos_colhidos" label="Nº de frutos colhidos">
+            <FormItem name="num_frutos_colhidos" label="Nº de frutos colhidos" required>
               <Input
                 type="number"
                 min={0}
@@ -61,7 +61,7 @@ function PlantaForm({ initialValues, validationSchema, onSubmit, ...props }) {
             </FormItem>
           </Col>
           <Col md={8} sm={24}>
-            <FormItem name="qtd_diaria_agua" label="Qntd. de água diária">
+            <FormItem name="qtd_diaria_agua" label="Qntd. de água diária" required>
               <Input
                 name="qtd_diaria_agua"
                 placeholder="Qntd. de água diária"
@@ -74,7 +74,7 @@ function PlantaForm({ initialValues, validationSchema, onSubmit, ...props }) {
 
         <Row gutter={10}>
           <Col md={12} sm={24}>
-            <FormItem name="qtd_media_sementes" label="Qntd. média de sementes">
+            <FormItem name="qtd_media_sementes" label="Qntd. média de sementes" required>
               <Input
                 type="number"
                 min={0}
@@ -84,7 +84,7 @@ function PlantaForm({ initialValues, validationSchema, onSubmit, ...props }) {
             </FormItem>
           </Col>
           <Col md={12} sm={24}>
-            <FormItem name="nivel_incidencia_solar" label="Nº incidência solar">
+            <FormItem name="nivel_incidencia_solar" label="Nº incidência solar" required>
               <Input
                 type="number"
                 min={0}
