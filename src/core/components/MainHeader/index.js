@@ -7,10 +7,11 @@ export default function MainHeader(args) {
   const { collapsed, toggleFn } = args;
   return (
     <div className="main-header">
-      {React.createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
-        style: { color: "#fff", fontSize: 24 },
-        onClick: toggleFn,
-      })}
+      {collapsed ? (
+        <MenuUnfoldOutlined className="sidebar-icon" onClick={toggleFn} />
+      ) : (
+        <MenuFoldOutlined className="sidebar-icon" onClick={toggleFn} />
+      )}
     </div>
   );
 }

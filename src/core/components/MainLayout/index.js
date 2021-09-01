@@ -9,9 +9,9 @@ TODO: Layout principal da aplicação. Deverá conter
 
 */
 function MainLayout({ children }) {
-  const [responsive, setCollapsed] = useState(false);
+  const [collapsed, setCollapsed] = useState(false);
   const toggle = () => {
-    setCollapsed(!responsive);
+    setCollapsed(!collapsed);
   };
   return (
     <>
@@ -21,11 +21,11 @@ function MainLayout({ children }) {
           breakpoint="md"
           collapsedWidth="0"
           collapsible
-          collapsed={responsive}
+          collapsed={collapsed}
           onCollapse={toggle}
         />
         <Layout>
-          <MainHeader collapsed={responsive} toggleFn={() => toggle()} />
+          <MainHeader collapsed={collapsed} toggleFn={() => toggle()} />
           {children}
         </Layout>
       </Layout>
