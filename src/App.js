@@ -14,6 +14,10 @@ import { Switch, BrowserRouter, Route } from "react-router-dom";
 function App() {
   return (
     <BrowserRouter>
+    <Switch>
+    <Route exact path={UrlRouter.auth.login} component={LoginPage} />
+    {/* Rotas de login */}
+    </Switch>
       <MainLayout>
         <Switch>
           {/* TODO: Trocar por component Home */}
@@ -25,8 +29,7 @@ function App() {
           <Route exact path={UrlRouter.plantas.visualizar} component={PlantaView} />
           <Route exact path={UrlRouter.plantacoes.index} component={PlantacaoIndex} />
           <Route exact path={UrlRouter.plantacoes.novo} component={PlantacaoCreate} />
-          {/* Rotas de login */}
-          <Route exact path={UrlRouter.auth.login} component={LoginPage} />
+          
         </Switch>
       </MainLayout>
     </BrowserRouter>
