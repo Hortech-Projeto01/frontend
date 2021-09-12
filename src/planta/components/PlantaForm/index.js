@@ -111,16 +111,6 @@ function PlantaForm({ initialValues, validationSchema, onSubmit, ...props }) {
             </FormItem>
           </Col>
         </Row>
-        <Row gutter={10}>
-          <Col sm={24}>
-            <FormItem name="tecnicas_plantio" label="Técnicas de plantio">
-              <Input
-                name="tecnicas_plantio"
-                placeholder="Técnicas de plantio"
-              />
-            </FormItem>
-          </Col>
-        </Row>
       </>
     </GenericForm>
   );
