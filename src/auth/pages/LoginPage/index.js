@@ -1,9 +1,14 @@
 import React from "react";
 import LoginForm from 'auth/components/LoginForm'
 import {Layout, Row, Col, Divider, Image } from "antd";
-const { Content} = Layout;
+
+import { useAuth } from "auth/components/ProvideAuth"
 
 import "./style.scss"
+
+const { Content} = Layout;
+
+
 
 const LoginPage = () => {
     // const [error, setError] = useState();
@@ -14,8 +19,9 @@ const LoginPage = () => {
     //   const { name, value } = e.target;
     //   setInputs((inputs) => ({ ...inputs, [name]: value }));
     // }
+    const auth = useAuth();
     const onFinish = (values) => {
-      console.log(values);
+      auth.signin(()=>console.log(values));
     };
     return (
       <>
