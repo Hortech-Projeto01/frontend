@@ -5,9 +5,13 @@ const fakeAuth = {
   isAuthenticated: false,
   signin(cb) {
     fakeAuth.isAuthenticated = true;
+    //gerando alguma string para fingir que é um hash
+    let token = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 10);
+    sessionStorage.setItem("authCode",token);
     setTimeout(cb, 100); // fake async
   },
   signout(cb) {
+    sessionStorage.removeItem("authCode");
     fakeAuth.isAuthenticated = false;
     setTimeout(cb, 100);
   }
@@ -27,8 +31,9 @@ export const useAuth = () => {
 };
 // Provider hook that creates auth object and handles state
 function useProvideAuth() {
-  const [user, setUser] = useState(null);
-
+  //verifiacacao temporaria se ja existe localstorage
+  const [user, setUser] = sessionStorage.getItem("authCode") || useState(null);
+  
   const signin = cb => {
     return fakeAuth.signin(() => {
       setUser("user");

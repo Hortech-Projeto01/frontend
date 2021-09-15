@@ -9,6 +9,7 @@ import PropTypes from "prop-types";
 
 const PrivateRoute = ({component: Component, ...rest}) => {
     const auth = useAuth();
+    
     return (
 
         // Show the component only when the user is logged in
