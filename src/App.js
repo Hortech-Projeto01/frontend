@@ -14,15 +14,16 @@ import { ProvideAuth } from "auth/components/ProvideAuth";
 import PrivateRoute from "auth/components/PrivateRoute";
 import PublicRoute from "auth/components/PublicRoute";
 
+import history from "core/utils/history.js";
+
 function App() {
-  
-  return (
+  return ( 
     <ProvideAuth>
-    <BrowserRouter>
+    <BrowserRouter history={history}>
       <MainLayout>
         <Switch>
           {/* TODO: Trocar por component Home */}
-          <PublicRoute restrictd={false} exact path={UrlRouter.home}>
+          <PublicRoute restricted={false} exact path={UrlRouter.home}>
             <h1>Home</h1>
           </PublicRoute>
           {/* Rotas de login */}
