@@ -17,7 +17,7 @@ export default function PlantacaoIndex() {
     useEffect(() => {
         plantacaoService.getAll()
             .then((response) => {
-                setPlantacoes(response.data)
+                setPlantacoes(response.data.rows)
             })
     },[])
 

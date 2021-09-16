@@ -19,7 +19,6 @@ export default function GenericIndex({
   editLink,
   headerButtons,
 }) {
-
   const buttons =
     typeof headerButtons === "string" ? (
       <GenericButton
@@ -35,8 +34,8 @@ export default function GenericIndex({
 
   const actionColumn = {
     displayName: "actionButtons",
-    title: "Ações", 
-    key: "actions", 
+    title: "Ações",
+    key: "actions",
     render: (_, record) => (
       <Space size="middle">
         <Link to={viewLink ? replaceParamsToLink(viewLink, record.id) : ""}>
@@ -60,8 +59,8 @@ export default function GenericIndex({
 }
 
 GenericIndex.propTypes = {
-  title: PropTypes.string.isRequired,
-  entity: PropTypes.object.isRequired,
+  title: PropTypes.string,
+  entity: PropTypes.array.isRequired,
   columns: PropTypes.arrayOf(
     PropTypes.shape({
       title: PropTypes.string,
@@ -71,5 +70,5 @@ GenericIndex.propTypes = {
   ).isRequired,
   viewLink: PropTypes.string,
   editLink: PropTypes.string,
-  headerButtons: PropTypes.oneOf([PropTypes.string, PropTypes.element]),
+  headerButtons: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
 };

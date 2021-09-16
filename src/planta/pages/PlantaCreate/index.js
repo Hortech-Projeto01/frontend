@@ -7,7 +7,17 @@ import * as yup from "yup";
 export default function PlantaCreate() {
   const plantaService = new PlantaService();
 
-  const initialValues = {};
+  const initialValues = {
+    nome: "",
+    especie: "",
+    tecnicas_plantio: "",
+    infos_por_estacao: "",
+    cor_folhas: "",
+    num_frutos_colhidos: "",
+    qtd_diaria_agua: "",
+    qtd_media_sementes: "",
+    nivel_incidencia_solar: "",
+  };
 
   const validationSchema = yup.object().shape({
     nome: yup.string().required("Campo requerido!"),
