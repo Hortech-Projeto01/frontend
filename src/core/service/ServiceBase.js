@@ -20,10 +20,7 @@ export class ServiceBase {
   }
 
   getAll(options = {}) {
-    const requestParams = new URLSearchParams(options);
-    return axios.get(
-      `${this.baseUrl}${this.endpoint}?${requestParams.toString()}`
-    );
+    return axios.get(`${this.baseUrl}${this.endpoint}`, { params: options });
   }
 
   create(values) {

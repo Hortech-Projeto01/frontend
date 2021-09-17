@@ -1,6 +1,7 @@
 import MainUrlRoutes from "core/constants/MainUrlRoutes";
 
 const UrlRouter = {
+  root: MainUrlRoutes.root,
   home: MainUrlRoutes.home,
   plantas: {
     index: MainUrlRoutes.plantas,
@@ -13,7 +14,7 @@ const UrlRouter = {
     novo: `${MainUrlRoutes.plantacoes}/novo`,
     editar: `${MainUrlRoutes.plantacoes}/editar/:id`,
   },
-  auth:{
+  auth: {
     login: MainUrlRoutes.login,
   },
 };

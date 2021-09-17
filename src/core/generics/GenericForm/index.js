@@ -5,7 +5,6 @@ import PropTypes from "prop-types";
 import { message } from "antd";
 import { useHistory } from "react-router";
 
-
 import "./styles.scss";
 import UrlRouter from "core/constants/UrlRouter";
 

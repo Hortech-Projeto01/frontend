@@ -6,15 +6,18 @@ const fakeAuth = {
   signin(cb) {
     fakeAuth.isAuthenticated = true;
     //gerando alguma string para fingir que é um hash
-    let token = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 10);
-    sessionStorage.setItem("authCode",token);
+    let token = Math.random()
+      .toString(36)
+      .replace(/[^a-z]+/g, "")
+      .substr(0, 10);
+    sessionStorage.setItem("authCode", token);
     setTimeout(cb, 100); // fake async
   },
   signout(cb) {
     sessionStorage.removeItem("authCode");
     fakeAuth.isAuthenticated = false;
     setTimeout(cb, 100);
-  }
+  },
 };
 
 const authContext = createContext();
@@ -33,15 +36,15 @@ export const useAuth = () => {
 function useProvideAuth() {
   //verifiacacao temporaria se ja existe localstorage
   const [user, setUser] = sessionStorage.getItem("authCode") || useState(null);
-  
-  const signin = cb => {
+
+  const signin = (cb) => {
     return fakeAuth.signin(() => {
       setUser("user");
       cb();
     });
   };
 
-  const signout = cb => {
+  const signout = (cb) => {
     return fakeAuth.signout(() => {
       setUser(null);
       cb();
@@ -51,10 +54,10 @@ function useProvideAuth() {
   return {
     user,
     signin,
-    signout
+    signout,
   };
 }
 
 ProvideAuth.propTypes = {
   children: PropTypes.element,
-  };
+};
