@@ -3,6 +3,7 @@ import LoginForm from 'auth/components/LoginForm'
 import {Layout, Row, Col, Divider, Image } from "antd";
 
 import { useAuth } from "auth/components/ProvideAuth"
+import history from "core/utils/history.js";
 
 import "./style.scss"
 
@@ -21,7 +22,9 @@ const LoginPage = () => {
     // }
     const auth = useAuth();
     const onFinish = (values) => {
-      auth.signin(()=>console.log(values));
+      auth.signin(()=>{console.log(values);
+        history.push("/");
+      });
     };
     return (
       <>
