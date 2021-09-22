@@ -6,12 +6,14 @@ import React from "react";
 import { Switch, Route, BrowserRouter, Redirect } from "react-router-dom";
 import PrivateRoutes from "./PrivateRoutes";
 
+import history from "core/utils/history.js";
+
 export default function MainRouter() {
   const auth = useAuth();
 
   return (
     <>
-      <BrowserRouter>
+      <BrowserRouter history={history}> 
         <Switch>
           {/* TODO: Trocar por component Home */}
           <Route

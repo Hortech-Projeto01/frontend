@@ -4,7 +4,6 @@ import React from "react";
 import { ProvideAuth } from "auth/components/ProvideAuth";
 import MainRouter from "routes/MainRouter";
 
-import history from "core/utils/history.js";
 
 function App() {
   return (
