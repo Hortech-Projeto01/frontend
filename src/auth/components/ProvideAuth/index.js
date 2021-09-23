@@ -3,20 +3,20 @@ import PropTypes from "prop-types";
 
 const fakeAuth = {
   isAuthenticated: false,
-  signin(cb) {
-    fakeAuth.isAuthenticated = true;
+  signin() {
+    this.isAuthenticated = true;
     //gerando alguma string para fingir que é um hash
     let token = Math.random()
       .toString(36)
       .replace(/[^a-z]+/g, "")
       .substr(0, 10);
     sessionStorage.setItem("authCode", token);
-    setTimeout(cb, 100); // fake async
+    //setTimeout(cb, 100); // fake async
   },
-  signout(cb) {
+  signout() {
     sessionStorage.removeItem("authCode");
     fakeAuth.isAuthenticated = false;
-    setTimeout(cb, 100);
+    //setTimeout(cb, 100);
   },
 };
 
@@ -37,18 +37,14 @@ function useProvideAuth() {
   //verifiacacao temporaria se ja existe localstorage
   const [user, setUser] = sessionStorage.getItem("authCode") || useState(null);
 
-  const signin = (cb) => {
-    return fakeAuth.signin(() => {
-      setUser("user");
-      cb();
-    });
+  const signin = () => {
+    setUser("user");
+    fakeAuth.signin();
   };
 
-  const signout = (cb) => {
-    return fakeAuth.signout(() => {
-      setUser(null);
-      cb();
-    });
+  const signout = () => {
+    setUser(null);
+    fakeAuth.signout();
   };
 
   return {

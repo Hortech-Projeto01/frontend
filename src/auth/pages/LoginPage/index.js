@@ -1,9 +1,9 @@
-import React from "react";
+import React, {useEffect} from "react";
 import LoginForm from 'auth/components/LoginForm'
 import {Layout, Row, Col, Divider, Image } from "antd";
-
+import  { } from 'react-router-dom'
 import { useAuth } from "auth/components/ProvideAuth"
-import history from "core/utils/history.js";
+import { Redirect } from "react-router"
 
 import "./style.scss"
 
@@ -21,11 +21,15 @@ const LoginPage = () => {
     //   setInputs((inputs) => ({ ...inputs, [name]: value }));
     // }
     const auth = useAuth();
+    useEffect(() => {
+      console.log(auth.user);
+      return <Redirect to="/" />;
+    },[auth]);
     const onFinish = (values) => {
-      auth.signin(()=>{console.log(values);
-        history.push("/");
-      });
+      auth.signin();
+      console.log(values);
     };
+    
     return (
       <>
         <Layout className="layout">

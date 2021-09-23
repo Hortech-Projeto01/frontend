@@ -5,14 +5,14 @@ import { Form, Input, Button} from "antd";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
 import "./style.scss";
 
-const LoginForm = ({onFinish}) => {
+const LoginForm = (props) => {
     return (
         <Form
                   name="normal_login"
                   className="login-form"
                   initialValues={{
                   }}
-                  onFinish={onFinish}
+                  {...props}
                 >
                   <Form.Item
                     name="email"

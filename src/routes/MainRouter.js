@@ -3,7 +3,7 @@ import PublicRoute from "auth/components/PublicRoute";
 import LoginPage from "auth/pages/LoginPage";
 import UrlRouter from "core/constants/UrlRouter";
 import React from "react";
-import { Switch, Route, BrowserRouter, Redirect } from "react-router-dom";
+import { Switch, Route, Router, Redirect } from "react-router-dom";
 import PrivateRoutes from "./PrivateRoutes";
 
 import history from "core/utils/history.js";
@@ -13,7 +13,7 @@ export default function MainRouter() {
 
   return (
     <>
-      <BrowserRouter history={history}> 
+      <Router history={history}> 
         <Switch>
           {/* TODO: Trocar por component Home */}
           <Route
@@ -38,7 +38,7 @@ export default function MainRouter() {
             <PrivateRoutes />
           </Route>
         </Switch>
-      </BrowserRouter>
+      </Router>
     </>
   );
 }
