@@ -13,6 +13,9 @@ const UrlRouter = {
     novo: `${MainUrlRoutes.plantacoes}/novo`,
     editar: `${MainUrlRoutes.plantacoes}/editar/:id`,
   },
+  agendamento: {
+    editar: `${MainUrlRoutes.agendamentos}/editar/:idPlantacao`,
+  },
 };
 
 export default UrlRouter;
