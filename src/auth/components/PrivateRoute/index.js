@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Route, Redirect } from "react-router-dom";
-import { useAuth } from "auth/components/ProvideAuth";
+import { useAuth } from "auth/context";
 import UrlRouter from "core/constants/UrlRouter";
 
 import PropTypes from "prop-types";
@@ -15,7 +15,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
     <Route
       {...rest}
       render={(props) =>
-        auth.user ? (
+        auth.isLogged ? (
           <Component {...props} />
         ) : (
           <Redirect to={UrlRouter.auth.login} />

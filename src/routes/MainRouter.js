@@ -1,4 +1,4 @@
-import { useAuth } from "auth/components/ProvideAuth";
+import { useAuth } from "auth/context";
 import PublicRoute from "auth/components/PublicRoute";
 import LoginPage from "auth/pages/LoginPage";
 import UrlRouter from "core/constants/UrlRouter";
@@ -13,14 +13,14 @@ export default function MainRouter() {
 
   return (
     <>
-      <Router history={history}> 
+      <Router history={history}>
         <Switch>
           {/* TODO: Trocar por component Home */}
           <Route
             exact
             path={UrlRouter.root}
             render={() =>
-              auth.user ? (
+              auth.isLogged ? (
                 <Redirect to={UrlRouter.home} />
               ) : (
                 <Redirect to={UrlRouter.auth.login} />

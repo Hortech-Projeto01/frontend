@@ -1,15 +1,14 @@
 import React from "react";
 //import LoginLayout from "core/components/LoginLayout";
 
-import { ProvideAuth } from "auth/components/ProvideAuth";
 import MainRouter from "routes/MainRouter";
-
+import { AuthProvider } from "auth/context";
 
 function App() {
   return (
-    <ProvideAuth>
+    <AuthProvider>
       <MainRouter />
-    </ProvideAuth>
+    </AuthProvider>
   );
 }
 

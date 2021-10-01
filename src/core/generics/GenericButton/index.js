@@ -19,7 +19,7 @@ function GenericButton({ navLink, children, ...buttonProps }) {
 
 GenericButton.propTypes = {
   navLink: PropTypes.string,
-  children: PropTypes.element,
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
 };
 
 export default GenericButton;

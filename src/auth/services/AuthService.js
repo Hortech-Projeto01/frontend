@@ -11,10 +11,10 @@ export default class AuthService extends ServiceBase {
   }
 
   login(user) {
-    return axios.post(`${super.baseUrl}${this.loginEndpoint}`, user);
+    return axios.post(`${this.baseUrl}${this.loginEndpoint}`, user);
   }
 
   signup(newUser) {
-    return axios.post(`${super.baseUrl}${this.loginEndpoint}`, newUser);
+    return axios.post(`${this.baseUrl}${this.loginEndpoint}`, newUser);
   }
 }
